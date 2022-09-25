@@ -43,8 +43,12 @@ const profile = (props: Props) => {
   return (
     <div>
       <h3 className={styles.title}>Profile Page</h3>
-      {props.data.map((user: User) => {
-        console.log(user);
+      {props.data.map((user: User, index: number) => {
+        return (
+          <React.Fragment key={index}>
+            <p>{user.name}</p>
+          </React.Fragment>
+        );
       })}
     </div>
   );
