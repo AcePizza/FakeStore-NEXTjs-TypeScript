@@ -1,7 +1,7 @@
 import { PreviewData } from "next";
 import { ParsedUrlQuery } from "querystring";
 import React from "react";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Profile.module.css";
 
 type Props = {
   users: {};
@@ -16,14 +16,19 @@ type StaticProps = {
 type User = {
   address: {
     city: string;
-    geo: { lat: string; lng: string };
-
+    geo: {
+      lat: string;
+      lng: string;
+    };
     street: string;
     suite: string;
     zipcode: string;
   };
-  company: { bs: string; catchPhrase: string; name: string };
-
+  company: {
+    bs: string;
+    catchPhrase: string;
+    name: string;
+  };
   email: string;
   id: number;
   name: string;
@@ -45,9 +50,11 @@ const profile = (props: Props) => {
       <h3 className={styles.title}>Profile Page</h3>
       {props.data.map((user: User, index: number) => {
         return (
-          <React.Fragment key={index}>
-            <p>{user.name}</p>
-          </React.Fragment>
+          <div className="" key={index}>
+            <a className={styles.single}>
+              <h3>{user.name}</h3>
+            </a>
+          </div>
         );
       })}
     </div>
