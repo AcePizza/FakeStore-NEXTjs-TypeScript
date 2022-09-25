@@ -50,7 +50,7 @@ const profile = (props: Props) => {
       <h3 className={styles.title}>Profile Page</h3>
       {props.data.map((user: User, index: number) => {
         return (
-          <div className="" key={index}>
+          <div key={index}>
             <a className={styles.single}>
               <h3>{user.name}</h3>
             </a>
