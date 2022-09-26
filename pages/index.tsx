@@ -11,7 +11,7 @@ const Home: NextPage = () => {
         <title>NEXT.JS Project</title>
       </Head>
       <div>
-        <h3 className={styles.title}>My Home Page</h3>
+        <h3 className={styles.title}>My NEXT.js Page</h3>
         <p className={styles.text}>
           This is my home page: this is where you can find me, if you want to.
           The 3 people in my real life know about it. It's also the link to my
