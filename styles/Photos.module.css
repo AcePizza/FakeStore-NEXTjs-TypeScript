@@ -1,0 +1,25 @@
+.single {
+    padding: 2px 26px;
+    background: #fff;
+    display: block;
+    margin: 20px 10px;
+    border-left: 8px solid #fff;
+    border-radius: 5px;
+}
+
+.single:hover {
+    border-left: 8px solid #4979ff;
+}
+
+.image {
+    border-radius: 5px;
+    display: block;
+    padding: 2px 26px;
+    margin: 20px 10px;
+}
+
+.title {
+    color: #333;
+    padding-bottom: 20px;
+    text-align: center;
+}
