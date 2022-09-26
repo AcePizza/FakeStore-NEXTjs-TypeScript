@@ -16,8 +16,11 @@ const Navbar = (props: Props) => {
       <Link href={"/about"}>
         <a>About</a>
       </Link>
-      <Link href={"/profile"}>
+      <Link href={"/profile/"}>
         <a>Profile</a>
+      </Link>
+      <Link href={"/photos/"}>
+        <a>Photos</a>
       </Link>
     </nav>
   );
