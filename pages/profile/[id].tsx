@@ -14,6 +14,10 @@ type DetailsContext = {
   params: { id: string };
 };
 
+type DataProps = {
+  data: {};
+};
+
 export const getStaticPaths = async (params: StaticPaths) => {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
   const result = await response.json();

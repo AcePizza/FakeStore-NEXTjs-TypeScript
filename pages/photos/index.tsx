@@ -18,13 +18,19 @@ export const getStaticProps = async (props: Props) => {
   }
 };
 
+type Product = {
+  id: number;
+  image: string;
+  title: string;
+};
+
 const index = (props: Props) => {
   console.log("props", props);
 
   return (
     <>
       <h3>Products Page</h3>
-      {props.data.map((product: {}, index: number) => {
+      {props.data.map((product: Product, index: number) => {
         return (
           <Link href={"/photos/" + product.id} key={product.id}>
             <div className={styles.single}>
