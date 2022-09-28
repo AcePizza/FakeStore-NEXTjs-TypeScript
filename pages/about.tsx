@@ -1,20 +1,40 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import styles from "../styles/Home.module.css";
 
-type Props = {};
+type Props = {
+  data: Data[];
+};
+
+type Data = {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
+};
+
+export const getServerSideProps = async () => {
+  const res = await fetch("https://fakestoreapi.com/products");
+  const data: Data = await res.json();
+  return { props: { data } };
+};
 
 const about = (props: Props) => {
   return (
     <div>
       <h3 className={styles.title}>My About Page</h3>
-      <p className={styles.text}>
-        This is my about page. I created this page about a year ago, so I
-        thought I'd update it for a while. I should probably spend some time
-        going through my entire about page and make it a bit more coherent, but
-        I'm too lazy for that. After much deliberation, my blog is no longer
-        called Alphabe - Thursday.
-      </p>
+      {props.data.map((element: Data, index: number) => {
+        return (
+          <React.Fragment key={index}>
+            <p>{element.title}</p>
+          </React.Fragment>
+        );
+      })}
     </div>
   );
 };

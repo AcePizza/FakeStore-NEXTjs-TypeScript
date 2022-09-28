@@ -36,7 +36,6 @@ export const getStaticPaths = async (params: PhotoContext) => {
 };
 
 export const getStaticProps = async (context: PhotoContext) => {
-  console.log("constext :>> ", context);
   const id = context.params.id;
   const response = await fetch("https://fakestoreapi.com/products/" + id);
   const result = await response.json();
@@ -46,10 +45,13 @@ export const getStaticProps = async (context: PhotoContext) => {
 };
 
 const photos = (props: Props) => {
-  console.log("props", props);
   return (
     <div className={styles.single}>
-      <h3 className={styles.title}>{props.data.title}</h3>
+      <div className={styles.divcontainer}>
+        <h3 className={styles.title}>{props.data.title}</h3>
+        <div className={styles.price}>Test</div>
+      </div>
+
       <img
         className={styles.image}
         src={props.data.image}
