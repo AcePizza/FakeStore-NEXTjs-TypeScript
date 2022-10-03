@@ -51,7 +51,7 @@ const about = (props: Props) => {
         <input value={textValue} onChange={onChangeHandler}></input>
       </form>
       <button onClick={onClickHandler}>Button</button>
-      {props.data.map((element: Data, index: number) => {
+      {props.data.map((element, index) => {
         return (
           <React.Fragment key={index}>
             <p>{element.title}</p>
